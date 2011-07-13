@@ -13,8 +13,6 @@ class Domain_(Base):
     date_end = Column(DateTime)
     piapia = Column(String)
 
-    owner = relation("Owner", primaryjoin="Domain_.owner_id==Owner.id")
-
     def __repr__(self):
         return "<main Domain %s>" % self.fqdn
 
@@ -25,3 +23,5 @@ class Owner(Base):
     id = Column(Integer,primary_key=True, autoincrement=True)
     name = Column(String)
     email = Column(String)
+
+Domain_.owner = relation("Owner", primaryjoin=Domain_.owner_id==Owner.id)
