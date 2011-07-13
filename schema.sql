@@ -4,8 +4,8 @@ USE main_db;
 DROP TABLE IF EXISTS Domain_;
 CREATE TABLE Domain_ (
     domain_id INT UNSIGNED AUTO_INCREMENT,
-    owner_id VARCHAR(255) NOT NULL,
     fqdn VARCHAR(255) NOT NULL,
+    owner_id VARCHAR(255) NOT NULL,
     date_end DATETIME,
     piapia VARCHAR(32),
 
